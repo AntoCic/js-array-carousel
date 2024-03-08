@@ -37,6 +37,12 @@ body {
   object-fit: cover;
   display: none;
 }
+
+
+#img_carosello .ms_active {
+  display: block !important;
+}
+
 #img_carosello_side{
   width: 20%;
   height: 70%;
@@ -63,10 +69,10 @@ body {
   opacity: 0.2;
 }
 
-.ms_select+div{
+#img_carosello_side .ms_active+div{
   opacity: 0 !important;
 }
-.ms_select{
+#img_carosello_side .ms_active{
   border: 4px solid gray;
   transition: border 0.2s; 
 }
@@ -81,6 +87,7 @@ body {
   position: absolute;
   left: calc(50% - 15px);
   transition: opacity 0.3s, border 0.3s;  
+  z-index: 1;
 }
 .ms_bt:hover{
   border: 1px solid gray;
@@ -94,11 +101,6 @@ body {
 .ms_bottom {
   bottom: 10px;
 }
-
-.ms_active {
-  display: block !important;
-}
-
 /*************************************************
     MEDIA RESPONSIVE
  *************************************************/
