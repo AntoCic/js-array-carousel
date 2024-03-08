@@ -7,6 +7,10 @@ menu {
 a {
   text-decoration: none;
 }
+img{
+  width: 100%;
+  height:100%;
+}
 
 /************************************************
       UTILITIES
@@ -28,13 +32,43 @@ body {
 #img_carosello {
   width: 70%;
   height: 70%;
-  position: relative;
 }
 #img_carosello img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   display: none;
+}
+#img_carosello_side{
+  width: 20%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#img_carosello_side .img_box {
+  flex-grow: 1;
+  position: relative;
+}
+.img_box img,.img_box div{
+  position: absolute;
+  object-fit: cover;
+}
+.img_box div{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  transition: opacity 0.2s; 
+}
+.img_box div:hover{
+  opacity: 0.2;
+}
+
+.ms_select+div{
+  opacity: 0 !important;
+}
+.ms_select{
+  border: 4px solid gray;
+  transition: border 0.2s; 
 }
 
 .ms_bt {
