@@ -32,6 +32,9 @@ for (let index = 0; index < pathDirImg.length; index++) {
 
 const imgElementList = document.querySelectorAll("#img_carosello img");
 const imgSideElementList = document.querySelectorAll("#img_carosello_side img");
+const divSideElementList = document.querySelectorAll(
+  "#img_carosello_side .img_box div"
+);
 
 bt_up.addEventListener("click", function () {
   imgElementList[indexCarosello].classList.remove("ms_active");
@@ -57,3 +60,14 @@ bt_down.addEventListener("click", function () {
   imgElementList[indexCarosello].classList.add("ms_active");
   imgSideElementList[indexCarosello].classList.add("ms_active");
 });
+
+for (let index = 0; index < divSideElementList.length; index++) {
+  divSideElementList[index].addEventListener("click", function () {
+    imgElementList[indexCarosello].classList.remove("ms_active");
+    imgSideElementList[indexCarosello].classList.remove("ms_active");
+    indexCarosello = index;
+    console.log(index);
+    imgElementList[indexCarosello].classList.add("ms_active");
+    imgSideElementList[indexCarosello].classList.add("ms_active");
+  });
+}
